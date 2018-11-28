@@ -19,6 +19,11 @@ Write implementation for :
   hybrids:
     IntroSort
 
+
+
+More inspiration at:
+FROM: https://www.geeksforgeeks.org/quick-sort/
+
 '''
 import numpy.random as random
 
