@@ -1,3 +1,9 @@
+'''
+FROM: https://www.quora.com/What-is-an-intuitive-explanation-of-QuickSort
+I liked th explanation and the visuals above. 
+For more thorough understanding of all variations of pivor sort, consider all variations as explained in:
+FROM: https://www.quora.com/How-do-I-analyse-a-Quicksort-algorithm-in-depth
+'''
 import numpy.random as random
 
 # a = [2,8,7, 1,3,5,6,4]
