@@ -7,10 +7,10 @@
 
 # a = [10, 15, 3, 7]
 # n = 17
-puts 'Enter a list of numbers?'
+puts 'Enter a list of integers, separated by space:'
 a = gets.strip.split.map { |n| n.to_i }
-puts 'Enter a number?'
-n = gets.strip.to_i
+puts 'Enter a number for the sum?'
+k = gets.strip.to_i
 
 # ----- Naive solution -------
 # a.each_with_index do |x, i|
@@ -22,5 +22,36 @@ n = gets.strip.to_i
 # end
 # puts('No')
 
-# ------  
+# Solution:
+# Lets assume the array is sorted (which can be achieved in nln time at best)
+# 
+
+# k=7
+# a = [1,2,5,7,0,9]
+a.sort!
+leftIdx = 0
+rightIdx = a.length - 1
+pairs = []
+while (rightIdx > leftIdx)
+  s = a[leftIdx] + a[rightIdx]
+  if (s == k)
+    pairs.append([leftIdx,rightIdx])
+    rightIdx -= 1
+  elsif (s > k)
+    rightIdx -= 1
+  else
+    leftIdx += 1
+  end
+end
+
+if !pairs.empty?
+  puts "Found pairs whose sum are #{k}:"
+  puts pairs.to_s
+  puts pairs.length
+  for x in pairs
+    puts "(#{a[x[0]]}, #{a[x[1]]}) @ indeces (#{x[0]}, #{x[1]})" 
+  end
+else
+  puts "No paris with sum of #{k} was found"
+end
 
